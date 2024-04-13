@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, computed, watch } from 'vue'
+import { ref, reactive, watch } from 'vue'
 
 let x = ref(10)
 let string = ref('Hallo') // ref braucht man wenn man primitiv type hat ein string oder ein zahl

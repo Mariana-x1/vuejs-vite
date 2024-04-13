@@ -1,8 +1,9 @@
 <script setup>
 import { ref, reactive } from 'vue'
 let x = ref(10)
-let string = ref('Hallo')
+let string = ref('Hallo') // ref braucht man wenn man primitiv type hat ein string oder ein zahl
 const state = reactive({
+  //reactive braucht man wenn man referenz types hat
   count: 0, // wenn wir count über Atribut verändern wollen dann brauchen wir keine x.value mehr bei increase stattdessen:      state.count += value
   name: 'Lana'
 })

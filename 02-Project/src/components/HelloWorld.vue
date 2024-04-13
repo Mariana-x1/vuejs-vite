@@ -9,6 +9,13 @@ const state = reactive({
   name: 'Lana'
 })
 
+//liste darstellen
+const todos = [
+  { desc: 'Programieren', done: false },
+  { desc: 'HTML', done: false },
+  { desc: 'JS', done: true }
+]
+
 const decrease = (value) => {
   x.value -= value
 }
@@ -45,5 +52,9 @@ watch(
     <p v-else>smaller</p>
 
     <input type="text" v-model="string" />
+    <hr />
+    <div v-for="item in todos" :key="item.desc">
+      <p>{{ item.desc }}</p>
+    </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, watch } from 'vue'
 
 let x = ref(10)
 let string = ref('Hallo') // ref braucht man wenn man primitiv type hat ein string oder ein zahl
@@ -23,6 +23,12 @@ const LargerThen = computed(() => {
     return 'smaller'
   }
 })
+watch(
+  () => state.count,
+  (newvalue, oldvalue) => {
+    console.log(newvalue, oldvalue)
+  }
+)
 </script>
 
 <template>
@@ -35,6 +41,7 @@ const LargerThen = computed(() => {
     <p>{{ state.name }}</p>
     <p>{{ state.count }}</p>
     <P>{{ LargerThen }}</P>
+
     <input type="text" v-model="string" />
   </div>
 </template>

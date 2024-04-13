@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 let x = ref(10)
+let string = ref('Hallo')
 
 const decrease = () => {
   x.value -= 1
@@ -16,5 +17,7 @@ const increase = () => {
     <button v-on:click="decrease">Update --</button>
     <p>{{ x / 2 }}</p>
     <button v-on:click="increase">Update ++</button>
+    <p>{{ string }}</p>
+    <input type="text" v-model="string" />
   </div>
 </template>

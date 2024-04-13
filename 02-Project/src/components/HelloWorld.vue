@@ -2,13 +2,16 @@
 import { ref, reactive } from 'vue'
 let x = ref(10)
 let string = ref('Hallo')
-const state = reactive({ count: 0, name: 'Lana' })
+const state = reactive({
+  count: 0, // wenn wir count über Atribut verändern wollen dann brauchen wir keine x.value mehr bei increase stattdessen:      state.count += value
+  name: 'Lana'
+})
 
 const decrease = (value) => {
   x.value -= value
 }
 const increase = (value) => {
-  x.value += value
+  state.count += value
 }
 </script>
 
@@ -20,6 +23,7 @@ const increase = (value) => {
     <button v-on:click="increase(5)">Update ++</button>
     <p>{{ string }}</p>
     <p>{{ state.name }}</p>
+    <p>{{ state.count }}</p>
     <input type="text" v-model="string" />
   </div>
 </template>

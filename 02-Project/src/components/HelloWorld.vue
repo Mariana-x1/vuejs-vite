@@ -16,13 +16,13 @@ const increase = (value) => {
   state.count += value
 }
 
-const LargerThen = computed(() => {
-  if (state.count > 10) {
-    return 'Larger'
-  } else {
-    return 'smaller'
-  }
-})
+// const LargerThen = computed(() => {
+//   if (state.count > 10) {
+//     return 'Larger'
+//   } else {
+//     return 'smaller'
+//   }
+// })
 watch(
   () => state.count,
   (newvalue, oldvalue) => {
@@ -41,6 +41,8 @@ watch(
     <p>{{ state.name }}</p>
     <p>{{ state.count }}</p>
     <P>{{ LargerThen }}</P>
+    <p v-if="state.count > 10">Larger</p>
+    <p v-else>smaller</p>
 
     <input type="text" v-model="string" />
   </div>
